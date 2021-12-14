@@ -3,14 +3,16 @@
 
 let buttonColours = ["red", "blue", "green", "yellow"];
 
-let randomChosenColour = nextSequence();
-
+let gamePattern = [];
 
 function nextSequence(){
     let ranNum = (Math.random() * 4);
-    randomNumber = Math.floor(ranNum) // return a random num between 1 - 3
-    return randomNumber;
+    randomNumber = Math.floor(ranNum) // return a random num between 0 - 3
+    let randomChosenColour = buttonColours[randomNumber];
+    gamePattern.push(randomChosenColour);
+    //return gamePattern;
 };
 
-console.log(buttonColours[randomChosenColour]);
+
+//console.log(nextSequence());
 // console.log(randomChosenColour);
