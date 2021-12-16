@@ -12,9 +12,16 @@ function nextSequence(){
     randomNumber = Math.floor(ranNum) // return a random num between 0 - 3
     let randomChosenColour = buttonColours[randomNumber];
     gamePattern.push(randomChosenColour);
-
+    
     $("#" + randomChosenColour).fadeIn(200).fadeOut(200).fadeIn(200);
+    
+    var audio = new Audio("sounds/" + randomChosenColour + ".mp3");
+    audio.play();
 
+    // Play audio onClick
+    // $("#red").click(function(){ // onClick
+    //     audio.play();
+    // });
     // return gamePattern;
 };
 
