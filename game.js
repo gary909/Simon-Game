@@ -23,19 +23,19 @@ function nextSequence(){
     //Play audio onClick
 
     $("#green").click(function(){ // onClick
-        // audio.play();
+        audio.play();
         $("#green").fadeIn(200).fadeOut(200).fadeIn(200);
         console.log("Green was clicked");
     });
 
     $("#red").click(function(){ // onClick
-        // audio.play();
+        audio.play();
         $("#red").fadeIn(200).fadeOut(200).fadeIn(200);
         console.log("Red was clicked");
     });
 
     $("#yellow").click(function(){ // onClick
-        // audio.play();
+        audio.play();
         $("#yellow").fadeIn(200).fadeOut(200).fadeIn(200);
         console.log("Yellow was clicked");
     });
