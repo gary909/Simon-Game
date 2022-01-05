@@ -11,7 +11,7 @@ $(".btn").click(function() {
 
   console.log(userClickedPattern);
   playSound(userChosenColour);
-
+  animatePress(userChosenColour);
 });
 
 
@@ -24,6 +24,7 @@ function nextSequence() {
   $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
   
   playSound(randomChosenColour);
+
 }
 
 function playSound(name) {
@@ -32,5 +33,12 @@ function playSound(name) {
 }
 
 function animatePress(currentColour) {
+
+  $("#" + currentColour).addClass("pressed");
   
+  // console.log("You pressed " + currentColour);
+
+  setTimeout(function () {
+    $("#" + currentColour).removeClass("pressed");
+  }, 100);
 }
