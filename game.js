@@ -4,13 +4,19 @@ var buttonColours = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
 var userClickedPattern = [];
 
+var started = false;
+
 var level = 0;
 
+
+//listen for any keypress
 $(document).keypress(function(event){
-  // alert('You pressed a key');
-  nextSequence()
-  $("#level-title").text("level " + level);
-  level += 1;
+  if (!started) {
+    // alert('You pressed a key');
+    $("#level-title").text("level " + level); // change text
+    nextSequence()
+    started = true;
+  }
 });
 
 
@@ -27,6 +33,10 @@ $(".btn").click(function() {
 
 function nextSequence() {
   
+  level += 1;
+
+  $("#level-title").text("level " + level); // change text
+  
   var randomNumber = Math.floor(Math.random() * 4);
   var randomChosenColour = buttonColours[randomNumber];
   gamePattern.push(randomChosenColour);
@@ -34,7 +44,7 @@ function nextSequence() {
   $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
   
   playSound(randomChosenColour);
-  console.log('hellloooo')
+  // console.log('hellloooo');
 }
 
 function playSound(name) {
