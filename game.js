@@ -28,6 +28,7 @@ $(".btn").click(function() {
   console.log(userClickedPattern);
   playSound(userChosenColour);
   animatePress(userChosenColour);
+  checkAnswer(userChosenColour);
 });
 
 
@@ -61,4 +62,12 @@ function animatePress(currentColour) {
   setTimeout(function () {
     $("#" + currentColour).removeClass("pressed");
   }, 100);
+}
+
+function checkAnswer(currentLevel){
+  if (currentLevel == gamePattern) {
+    console.log("success")
+  } else {
+    console.log("wrong")
+  }
 }
