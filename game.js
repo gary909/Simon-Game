@@ -43,10 +43,21 @@ function checkAnswer(currentLevel){
     }
 
   } else {
+
     console.log("wrong");
+
+    playSound("wrong");
+
+    $('body').addClass("game-over");
+    setTimeout(function () {
+      $('body').removeClass("game-over");
+    }, 200);
+
+    $("#level-title").text("Game Over, Press Any Key to Restart"); // change text
+
+    startOver();
   }
 }
-
 
 
 
@@ -55,9 +66,7 @@ function nextSequence() {
 
   //6. Once nextSequence() is triggered, reset the userClickedPattern to an empty array ready for the next level.
   userClickedPattern = [];
-  
   level += 1;
-
   $("#level-title").text("level " + level); // change text
 
   var randomNumber = Math.floor(Math.random() * 4);
@@ -82,3 +91,8 @@ function animatePress(currentColour) {
   }, 100);
 }
 
+function startOver(){
+  level = 0;
+  gamePattern = [];
+  started = false;
+}
